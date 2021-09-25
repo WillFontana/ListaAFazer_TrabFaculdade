@@ -1,5 +1,9 @@
 {
   "main": "node_modules/expo/AppEntry.js",
+  "authors": {
+    "name01": "Willyan Fontana do Prado",
+    "name02": "Luana Maria Albertoni"
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
