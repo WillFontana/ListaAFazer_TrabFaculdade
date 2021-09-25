@@ -39,7 +39,7 @@ const ListHandler = ({ todoList, addItemList, filter, setFilter }) => {
       <View style={styles.fieldContainer}>
         <TextField
           style={styles.field}
-          label="Novo afazer"
+          label="Novo a fazer"
           onChangeText={setNewTodoDescr}
           descr={newTodoDescr}
         />

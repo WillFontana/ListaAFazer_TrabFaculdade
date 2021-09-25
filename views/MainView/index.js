@@ -9,21 +9,9 @@ const MainView = () => {
   const [todoList, setTodoList] = useState([
     {
       id: 1,
-      descricao: "Fazer trab da Liliane",
+      descricao: "Dar nota máxima pra gente rsrs",
       data: moment().format("lll"),
       status: "aberto",
-    },
-    {
-      id: 2,
-      descricao: "Fazer trab da Liliane",
-      data: moment().format("lll"),
-      status: "cancelado",
-    },
-    {
-      id: 3,
-      descricao: "Fazer trab da Liliane",
-      data: moment().format("lll"),
-      status: "concluido",
     },
   ]);
   const [filter, setFilter] = useState("todos");
