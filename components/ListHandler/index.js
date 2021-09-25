@@ -5,6 +5,7 @@ import Button from "../Button";
 import TextField from "../TextField";
 import { Ionicons } from "@expo/vector-icons";
 import FilterField from "../FilterField";
+import { styles } from "./styles";
 
 const filters = ["todos", "concluido", "cancelado", "aberto"];
 
@@ -34,18 +35,26 @@ const ListHandler = ({ todoList, addItemList, filter, setFilter }) => {
   };
 
   return (
-    <View>
-      <View>
+    <View style={styles.container}>
+      <View style={styles.fieldContainer}>
         <TextField
+          style={styles.field}
           label="Novo afazer"
           onChangeText={setNewTodoDescr}
           descr={newTodoDescr}
         />
         <Button
+          complementStyle={styles.button}
           onPress={handleAddItemTodo}
-          icon={<Ionicons name="add" size={24} color="black" />}
+          icon={<Ionicons name="add" size={20} color="black" />}
         />
-        <Button onPress={() => setNewTodoDescr("")} text="Limpar" />
+      </View>
+      <View>
+        <Button
+          complementStyle={styles.buttonText}
+          onPress={() => setNewTodoDescr("")}
+          text="Limpar"
+        />
       </View>
       <View>
         <FilterField
