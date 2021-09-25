@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 import ListItem from "./ListItem";
 
 const TodoList = ({ todoList, handleChangeItemStatus, filter }) => {
@@ -39,7 +39,7 @@ const TodoList = ({ todoList, handleChangeItemStatus, filter }) => {
     }
   };
 
-  return <View>{renderFilteredItems()}</View>;
+  return <ScrollView>{renderFilteredItems()}</ScrollView>;
 };
 
 export default TodoList;

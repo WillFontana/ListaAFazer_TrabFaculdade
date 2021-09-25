@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
   },
   aberto: {
     borderColor: "#CECFCE",
-    backgroundColor: "#CECFCE144",
+    backgroundColor: "#CECFCE44",
   },
   concluido: {
     borderColor: "#BDE9BD",

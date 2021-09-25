@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     alignItems: "stretch",
   },
   fieldContainer: {
-    flex: 1,
     flexDirection: "row",
     alignItems: "flex-end",
   },
