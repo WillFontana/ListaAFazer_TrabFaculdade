@@ -13,13 +13,25 @@ const MainView = () => {
       data: moment().format("lll"),
       status: "aberto",
     },
+    {
+      id: 2,
+      descricao: "Fazer trab da Liliane",
+      data: moment().format("lll"),
+      status: "cancelado",
+    },
+    {
+      id: 3,
+      descricao: "Fazer trab da Liliane",
+      data: moment().format("lll"),
+      status: "finalizado",
+    },
   ]);
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bem vindo a sua lista de afazeres!</Text>
       <ListHandler addItemList={setTodoList} todoList={todoList} />
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} handleChangeItemStatus={setTodoList} />
     </View>
   );
 };

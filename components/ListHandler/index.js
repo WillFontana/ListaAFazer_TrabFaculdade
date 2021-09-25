@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Alert, View } from "react-native";
 import moment from "moment";
-import Button from "./Button";
-import TextField from "./TextField";
+import Button from "../Button";
+import TextField from "../TextField";
 import { Ionicons } from "@expo/vector-icons";
 
 const ListHandler = ({ todoList, addItemList }) => {
@@ -17,7 +17,7 @@ const ListHandler = ({ todoList, addItemList }) => {
   const handleAddItemTodo = () => {
     if (newTodoDescr.trim() !== "") {
       const newTodo = {
-        id: todoList.lengh + 1,
+        id: todoList.length + 1,
         descricao: newTodoDescr,
         data: moment().format("lll"),
         status: "aberto",
