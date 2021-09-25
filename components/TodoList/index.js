@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import ListItem from "./ListItem";
 
-const TodoList = ({ todoList, handleChangeItemStatus }) => {
+const TodoList = ({ todoList, handleChangeItemStatus, filter }) => {
   const handleChangeStatus = (id, status) => {
     const item = todoList.find((listItem) => listItem.id === id);
     item.status = status;
@@ -16,17 +16,30 @@ const TodoList = ({ todoList, handleChangeItemStatus }) => {
     handleChangeItemStatus(updatedTodoList);
   };
 
-  return (
-    <View>
-      {todoList.map((todo) => (
+  const renderFilteredItems = () => {
+    if (filter !== "todos") {
+      return todoList.map(
+        (todo) =>
+          todo.status === filter && (
+            <ListItem
+              item={todo}
+              key={todo.id}
+              handleChangeStatus={handleChangeStatus}
+            />
+          )
+      );
+    } else {
+      return todoList.map((todo) => (
         <ListItem
           item={todo}
           key={todo.id}
           handleChangeStatus={handleChangeStatus}
         />
-      ))}
-    </View>
-  );
+      ));
+    }
+  };
+
+  return <View>{renderFilteredItems()}</View>;
 };
 
 export default TodoList;

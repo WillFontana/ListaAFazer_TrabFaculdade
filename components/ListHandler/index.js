@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { Alert, View } from "react-native";
+import { Alert, Text, View } from "react-native";
 import moment from "moment";
 import Button from "../Button";
 import TextField from "../TextField";
 import { Ionicons } from "@expo/vector-icons";
+import FilterField from "../FilterField";
 
-const ListHandler = ({ todoList, addItemList }) => {
+const filters = ["todos", "concluido", "cancelado", "aberto"];
+
+const ListHandler = ({ todoList, addItemList, filter, setFilter }) => {
   const [newTodoDescr, setNewTodoDescr] = useState("");
 
   const alertEmptyField = () => {
@@ -32,16 +35,26 @@ const ListHandler = ({ todoList, addItemList }) => {
 
   return (
     <View>
-      <TextField
-        label="Novo afazer"
-        onChangeText={setNewTodoDescr}
-        descr={newTodoDescr}
-      />
-      <Button
-        onPress={handleAddItemTodo}
-        icon={<Ionicons name="add" size={24} color="black" />}
-      />
-      <Button onPress={() => setNewTodoDescr("")} text="Limpar" />
+      <View>
+        <TextField
+          label="Novo afazer"
+          onChangeText={setNewTodoDescr}
+          descr={newTodoDescr}
+        />
+        <Button
+          onPress={handleAddItemTodo}
+          icon={<Ionicons name="add" size={24} color="black" />}
+        />
+        <Button onPress={() => setNewTodoDescr("")} text="Limpar" />
+      </View>
+      <View>
+        <FilterField
+          label="Filtrar por status"
+          options={filters}
+          defaultOption={filter}
+          handleChange={setFilter}
+        />
+      </View>
     </View>
   );
 };

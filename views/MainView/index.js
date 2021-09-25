@@ -23,15 +23,25 @@ const MainView = () => {
       id: 3,
       descricao: "Fazer trab da Liliane",
       data: moment().format("lll"),
-      status: "finalizado",
+      status: "concluido",
     },
   ]);
+  const [filter, setFilter] = useState("todos");
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bem vindo a sua lista de afazeres!</Text>
-      <ListHandler addItemList={setTodoList} todoList={todoList} />
-      <TodoList todoList={todoList} handleChangeItemStatus={setTodoList} />
+      <ListHandler
+        addItemList={setTodoList}
+        todoList={todoList}
+        filter={filter}
+        setFilter={setFilter}
+      />
+      <TodoList
+        filter={filter}
+        todoList={todoList}
+        handleChangeItemStatus={setTodoList}
+      />
     </View>
   );
 };
