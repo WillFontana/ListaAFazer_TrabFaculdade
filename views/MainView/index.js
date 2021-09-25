@@ -30,7 +30,7 @@ const MainView = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Bem vindo a sua lista de afazeres!</Text>
+      <Text style={styles.title}>Bem vindo a sua lista de a fazeres!</Text>
       <ListHandler
         addItemList={setTodoList}
         todoList={todoList}
